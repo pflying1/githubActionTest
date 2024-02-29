@@ -1,0 +1,105 @@
+.learnAndWriteCss {
+  width:400px;
+  height:850px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.learnAndWriteIntroTextCss {
+  font-weight: bold;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.learnAndWriteBodyCss {
+  height: 100%;
+  width: 100%;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 20px;
+  background-color: #27496D;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.learnAndWriteBodyTitleCss {
+  margin-top: 20px;
+  color : white;
+  text-align: center;
+}
+
+.learnAndWriteBodyButtonWrapCss {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.learnAndWriteBodyButtonCss {
+  color: white;
+  background-color: #0C7B93;
+  border-radius: 30px;
+  margin: 10px;
+}
+
+.learnAndWriteBodyTextCss {
+  color: white;
+  border-radius: 30px;
+  margin: 10px;
+  font-size: 15px;
+  
+}
+
+.learnAndWriteBodyGithubWrapCss {
+  width:100%;
+  height: 30%;
+  color: white;
+  font-size: 20px;
+}
+
+.learnAndWriteBodyNotionWrapCss {
+  width:100%;
+  height: 30%;
+  color: white;
+  font-size: 20px;
+}
+
+.learnAndWriteBodyRecipeImage1WrapCss {
+  color: white;
+  font-size: 20px;
+  width : 100%;
+  height: 80%;
+  border-radius: 30px;
+  background-repeat: no-repeat;
+  background-size : 100% 100%;
+  background-image: url("../asset/temporaryImage.jpg");
+}
+.learnAndWriteBodyRecipeImage2WrapCss {
+  color: white;
+  font-size: 20px;
+  width : 100%;
+  height: 80%;
+  border-radius: 30px;
+  background-repeat: no-repeat;
+  background-size : 100% 100%;
+  /* background-image: url("../asset/temporaryImage.jpg"); */
+}
+
+.learnAndWriteBodyRecipeImage3WrapCss {
+  color: white;
+  font-size: 20px;
+  width : 100%;
+  height: 80%;
+  border-radius: 30px;
+  background-repeat: no-repeat;
+  background-size : 100% 100%;
+  background-image: url("../asset/temporaryImage.jpg");
+}

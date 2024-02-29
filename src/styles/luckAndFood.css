@@ -1,0 +1,49 @@
+.luckAndFoodCss {
+  width:400px;
+  height:850px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.luckAndFoodIntroTextCss {
+  font-weight: bold;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.lcukAndFoodBodyCss {
+  height: 100%;
+  width: 100%;
+  font-size: 30px;
+  margin-top: 20px;
+  background-color: #1FAB89;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.luckAndFoodBodyCss {
+  height: 100%;
+  width: 100%;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 20px;
+  background-color: #FFD6A5;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.luckAndFoodBodyTitleCss {
+  margin-top: 20px;
+  color : white;
+  text-align: center;
+}

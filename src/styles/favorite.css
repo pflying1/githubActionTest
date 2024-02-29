@@ -1,0 +1,96 @@
+.favoriteCss {
+  width:400px;
+  height:850px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.favoriteIntroTextCss {
+  font-weight: bold;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.favoriteBodyCss {
+  height: 100%;
+  width: 100%;
+  font-size: 30px;
+  margin-top: 20px;
+  background-color: #1FAB89;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.favoriteBodyTextCss {
+  color : white;
+}
+
+.favoriteBodyImgAllCss{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.favoriteBodyImgWrapCss {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5%;
+  margin-left: 10%;
+}
+
+.favoriteBodyImg1Css {
+  background-image: url("../asset/song2.png");
+  width : 100%;
+  height: 100%;
+  background-size : 120px 120px;
+  background-repeat: no-repeat;
+
+}
+
+.favoriteBodyImg2Css {
+  background-image: url("../asset/song1.png");
+  width : 100%;
+  height: 100%;
+  background-size : 120px 176px;
+  background-repeat: no-repeat;
+
+}
+
+.favoriteBodyImg3Css {
+  background-image: url("../asset/tea1.png");
+  width : 100%;
+  height: 100%;
+  background-size : 120px 170px;
+  background-repeat: no-repeat;
+
+}
+
+.favoriteBodyImg4Css {
+  background-image: url("../asset/teaguide.png");
+  width : 100%;
+  height: 100%;
+  background-size : 120px 250px;
+  background-repeat: no-repeat;
+
+}
+
+.favoriteBodyImg5Css {
+  background-image: url("../asset/Unlike\ Pluto\ -\ Everything\ Black.png");
+  width : 100%;
+  height: 100%;
+  background-size : 120px 133px;
+  background-repeat: no-repeat;
+
+}
+
+

@@ -1,0 +1,27 @@
+.page404Css {
+  width:400px;
+  height:850px;
+}
+.page404TextWrapCss {
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+}
+.page404SearchImageCss {
+  background-image: url("../asset/search.png");
+  width : 100%;
+  height: 35%;
+  background-size : 100% 100%;
+  background-repeat: no-repeat;
+}
+.page404DogImageCss {
+  background-image: url("../asset/dog.png");
+  width : 30%;
+  height: 10%;
+  background-size : 100% 100%;
+  background-repeat: no-repeat;
+  margin-left:60%;
+}

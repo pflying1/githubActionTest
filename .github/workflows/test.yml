@@ -1,0 +1,46 @@
+name: CI/CD Workflow
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Node.js version
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build:prod
+
+      - name: Test
+        run: npm run test
+        
+  deploy:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.NAS_IP }}
+          username: ${{ secrets.NAS_USERNAME }}
+          #key: ${{ secrets.NAS_SSH_KEY }}
+          password: ${{ secrets.NAS_PASSWORD }} 
+          #script: |
+          #  cd /path/to/your/project
+          #  git pull
+          #  npm ci
+          #  npm run build:prod
+          #  pm2 restart all
