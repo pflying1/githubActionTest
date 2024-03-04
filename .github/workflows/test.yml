@@ -50,3 +50,5 @@ jobs:
             echo "${{ secrets.NAS_PASSWORD }}" | sudo -S docker stop my-application || true
             echo "${{ secrets.NAS_PASSWORD }}" | sudo -S docker rm my-application || true
             echo "${{ secrets.NAS_PASSWORD }}" | sudo -S docker run -d --name my-application -p 80:80 my-application:latest
+
+            
