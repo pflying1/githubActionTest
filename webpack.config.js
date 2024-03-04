@@ -2,9 +2,11 @@ const ESLintPlugin = require("eslint-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require("path");
 
+const isDevelopment = process.env.NODE_ENV !== 'production';
+
 module.exports = {
-  mode: "development",
-  devtool: "eval-source-map",
+  mode: isDevelopment ? "development" : "production",
+  devtool: isDevelopment ? "eval-source-map" : "source-map",
   entry: "./src/index.tsx",
   module: {
     rules: [
@@ -40,20 +42,20 @@ module.exports = {
       extensions: ["ts", "js"],
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './public/index.html'),
+      template: path.resolve(__dirname, './dist/index.html'),
     }),
   ],
   output: {
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'index.bundle.js',
     publicPath: '/',
   },
-  devServer: {
+  devServer: isDevelopment ? {
     static: {
       directory: path.join(__dirname, 'dist'),
     },
     compress: true,
     hot: true,
     port: 9000,
-  },
+  } : {},
 };

@@ -9,7 +9,7 @@ export class AppController {
   @Get()
   getIndex(@Res() res: Response): void {
     res.setHeader('Content-Type', 'text/html');
-    res.sendFile(join(__dirname, 'public', 'index.html'));
+    res.sendFile(join(__dirname, 'dist', 'index.html'));
   }
 
   @Get('test')
