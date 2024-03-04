@@ -46,7 +46,7 @@ jobs:
           username: ${{ secrets.NAS_USERNAME }}
           password: ${{ secrets.NAS_PASSWORD }}
           script: |
-            docker pull my-application:latest
-            docker stop my-application || true
-            docker rm my-application || true
-            docker run -d --name my-application -p 80:80 my-application:latest
+            sudo docker pull my-application:latest
+            sudo docker stop my-application || true
+            sudo docker rm my-application || true
+            sudo docker run -d --name my-application -p 80:80 my-application:latest
