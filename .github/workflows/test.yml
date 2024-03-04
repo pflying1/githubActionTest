@@ -28,9 +28,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
           curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-          sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
-          sudo apt-get update
-          sudo apt-get install docker-ce
+          add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+          apt-get update
+          apt-get install docker-ce
 
       - name: Build Docker Image
         run: docker build . --file Dockerfile --tag my-application:latest
@@ -46,7 +46,7 @@ jobs:
           username: ${{ secrets.NAS_USERNAME }}
           password: ${{ secrets.NAS_PASSWORD }}
           script: |
-            echo "${{ secrets.NAS_PASSWORD }}" | sudo -S docker pull my-application:latest
-            echo "${{ secrets.NAS_PASSWORD }}" | sudo -S docker stop my-application || true
-            echo "${{ secrets.NAS_PASSWORD }}" | sudo -S docker rm my-application || true
-            echo "${{ secrets.NAS_PASSWORD }}" | sudo -S docker run -d --name my-application -p 80:80 my-application:latest
+            docker pull my-application:latest
+            docker stop my-application || true
+            docker rm my-application || true
+            docker run -d --name my-application -p 80:80 my-application:latest
