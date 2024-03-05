@@ -22,9 +22,10 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            cd /volume1/vscode/app/githubActionTest
-            git pull
-            
+            echo "${{ secrets.PASSWORD2 }}" | sudo -S docker pull ${{ secrets.DOCKER_USERNAME }}/my-application:latest
+            docker stop test || true
+            docker rm test || true
+            docker run -d --name test -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/my-application:latest
 
 
 
