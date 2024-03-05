@@ -10,6 +10,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Install Docker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io
+
   deploy:
     needs: build-and-test
     runs-on: ubuntu-20.04
@@ -22,7 +27,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            docker pull ${{ secrets.DOCKER_USERNAME }}/my-application:latest
+            docker pull pflying1/my-application:latest
             docker stop test || true
             docker rm test || true
-            docker run -d --name test -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/my-application:latest
+            docker run -d --name test -p 8080:8080 pflying1/my-application:latest
