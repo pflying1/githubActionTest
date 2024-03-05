@@ -30,9 +30,19 @@ jobs:
           script: |
             cd /volume1/vscode/app/githubActionTest
             git pull
-            #echo "${{ secrets.PASSWORD }}" | sudo -S synogroup --member docker ${{ secrets.USERNAME }}
-            docker build -t ${{ secrets.DOCKER_USERNAME }}/my-application:latest .
-            docker push ${{ secrets.DOCKER_USERNAME }}/my-application:latest
-            docker stop test || true
-            docker rm test || true
-            docker run -d --name test -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/my-application:latest
+
+      - name : Build Docker Image
+        run : docker build -t ${{ secrets.DOCKER_USERNAME }}/my-application:latest .
+      
+      - name: Push Docker Image
+        run : docker push ${{ secrets.DOCKER_USERNAME }}/my-application:latest
+
+      - name: Stop Docker
+        run : docker stop test || true    
+
+      - name: Rm Docker
+        run : docker rm test || true  
+
+      - name: run Docker
+        run : docker run -d --name test -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/my-application:latest
+            
