@@ -13,7 +13,7 @@ async function bootstrap(): Promise<void> {
   // CORS 설정
   app.enableCors();
 
-  await app.listen(3000);
+  await app.listen(3030);
 }
 bootstrap().catch((err) => {
   console.error(err);
