@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # 애플리케이션이 80 포트에서 실행될 것임을 알립니다.
-EXPOSE 80
+EXPOSE 8080
 
 # 애플리케이션을 실행합니다.
 CMD [ "npm", "start" ]
