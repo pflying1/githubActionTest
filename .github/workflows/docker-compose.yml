@@ -30,7 +30,7 @@ jobs:
           script: |
             cd /volume1/vscode/app/githubActionTest
             git pull origin main
-            synogroup --member docker ${{ secrets.USERNAME }}
+            echo "${{ secrets.PASSWORD }}" | sudo -S usermod -aG docker ${{ secrets.USERNAME }}
             docker build -t ${{ secrets.DOCKER_USERNAME }}/my-application:latest .
             docker push ${{ secrets.DOCKER_USERNAME }}/my-application:latest
             docker stop test || true
