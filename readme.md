@@ -9,9 +9,11 @@ github action 테스트 입니다.
 -> 도커 로그인 및 도커 이미지 build 부분과 도커허브에 push 하는 부분을 위의 내용 git pull 하는 부분 다음 script 부분에 적용해도 될거 같음 
 -> github action 에서 테스트를 해주지만 nas의 git 레포에 문제가 생길경우 바로 올라갈 가능성이 있음 위의 방식이 좀더 나은듯 함
 
+# 작성한 순서
 .github/workflows/ 경로에 docker-compose.yml 추가
 github action repository secret 추가
 
+# Dockerfile 안의 내용 관련 정리
 Dockerfile 작성 -> 도커 이미지를 만들기 위한 파일
 CMD [ "npm", "start" ] 위 명령어 때문에 도커를 시작하면 서버가 자동으로 올라감
 entrypoint.sh 설정인거 같음
