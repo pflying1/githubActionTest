@@ -37,7 +37,7 @@ jobs:
 
   deploy:
     needs: build-and-test
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Deploy
         uses: appleboy/ssh-action@master
@@ -47,7 +47,4 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            docker pull ${{ secrets.DOCKER_USERNAME }}/my-application:latest
-            docker stop test || true
-            docker rm test || true
-            docker run -d --name test -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/my-application:latest
+            whoami
