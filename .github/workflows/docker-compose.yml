@@ -50,12 +50,7 @@ jobs:
             cd /volume1/vscode/app/githubActionTest
             git pull 
             cd ..
-            /usr/local/bin/docker pull ${{ secrets.DOCKER_USERNAME }}/my-application:latest
-            /usr/local/bin/docker stop test || true
-            /usr/local/bin/docker rm test || true
-            /usr/local/bin/docker run -d --name test -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/my-application:latest
-          # ssh 연결까지는 잘 되었으나 nas 환경이 ubuntu랑 다른거 같음 좀더 찾아 보고 알아볼것
-          # 일단 nas에 직접 들어가서 docker hub의 이미지를 받아서 하는것은 잘됨
-
-          #수정 docker $PATH 환경변수가 필요함 추가 하니까 잘됨 
-          # 완!!!!!
+            docker pull ${{ secrets.DOCKER_USERNAME }}/my-application:latest
+            docker stop test || true
+            docker rm test || true
+            docker run -d --name test -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/my-application:latest
