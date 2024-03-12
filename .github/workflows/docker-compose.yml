@@ -54,3 +54,6 @@ jobs:
             docker stop test || true
             docker rm test || true
             docker run -d --name test -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/my-application:latest
+            
+
+            
